@@ -5,10 +5,14 @@
         static void Main(string[] args)
         {
 
+           
             const string Rock = "Rock";
             const string Papper = "Papper";
             const string Scissors = "Scissors";
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Choose: [r]ock, [p]aper or [s]cissors: ");
+            Console.ForegroundColor = ConsoleColor.Green;
+
             string playerMove = Console.ReadLine();
 
             if (playerMove == "r" || playerMove == "rock")
@@ -25,6 +29,7 @@
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Invalid Input. Try Again...");
                 return;
             }
@@ -44,24 +49,29 @@
                     break;
 
             }
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"The computer chose {computerMove}.");
 
             if ((playerMove == "Rock" && computerMove == "Scissors")
                 || (playerMove == "Papper" && computerMove == "Rock")
                 || (playerMove == "Scossors" && computerMove == "Papper"))
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("You win!");
             }
             else if ((computerMove == "Rock" && playerMove == "Scissors")
                 || (computerMove == "Papper" && playerMove == "Rock")
                 || (computerMove == "Scossors" && playerMove == "Papper"))
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You lose!");
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("This game was a draw.");
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
